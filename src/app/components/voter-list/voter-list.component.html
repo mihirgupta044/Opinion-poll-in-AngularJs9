@@ -1,0 +1,46 @@
+<div class="fluid-container">
+	<div class="row">
+		<div class="col-md">	
+			<mdb-card style="margin-left:3%; margin-right: 3%;">
+        <mdb-card-header style="font: 550 24px/32px Roboto, Helvetica Neue; color: #783535;">Voter List:</mdb-card-header>
+					<mdb-card-body>
+            <mdb-card-title>
+              <mdb-card-text>Current Voter List:</mdb-card-text>
+            </mdb-card-title>
+            <table mat-table [dataSource]="localCandidateList" class="mat-elevation-z8">  
+              <ng-container matColumnDef="ID">
+                <th mat-header-cell *matHeaderCellDef >ID of Candidate</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="FullName">
+                <th mat-header-cell *matHeaderCellDef >Full Name</th>
+                <td mat-cell *matCellDef="let stu"> {{stu.name}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="Mobile-No">
+                <th mat-header-cell *matHeaderCellDef >Mobile-No</th>
+                <td mat-cell *matCellDef="let element">  {{element.mobNo}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="Address">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+                <td mat-cell *matCellDef="let element"> {{element.Add}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="City">
+                <th mat-header-cell *matHeaderCellDef >City</th>
+                <td mat-cell *matCellDef="let element">  {{element.city}} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+  </div>
+</div>
+
+				
+  

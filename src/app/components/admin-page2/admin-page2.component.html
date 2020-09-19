@@ -1,0 +1,90 @@
+<mdb-card style="margin-left:3%; margin-right: 3%;">
+    <mdb-card-header>Customize Leaders</mdb-card-header>
+    <mdb-card-body>
+      <mdb-card-title>
+        <h5>Manage your Leaders</h5>
+      </mdb-card-title>
+      <mdb-card-text>If you want to update a Leader-List. Please visit Here! </mdb-card-text>
+      <!--<hr class="my-4">
+        <div class="form-row">
+            <div class="col-md">
+                <h3>Add Here:</h3>
+                <div class="md-form">
+                    <input mdbInput type="text" class="form-control" [(ngModel)]="leaderNme.ledr">
+                    <label>Leader Name</label>
+                </div>
+                <button mdbBtn type="button" color="unique" mdbWavesEffect (click)='onSubmit()'>Submit</button>
+            </div>
+        </div>-->
+        <hr class="my-4">
+        <h2><b>Created Leader-lists group.</b></h2>
+        <!--<table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Leader Name</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let ldr of leaderlists'>
+                <td>
+                    {{ldr.id}}
+                </td>
+                <td>
+                    {{ldr.ledr}}
+                </td>
+                <td>
+                    <mat-icon (click)='Deletename(ldr.id)'>Delete/</mat-icon>
+                </td>
+                <td>
+                  <mat-icon>Edit</mat-icon>
+                </td>
+              </tr>  
+            </tbody>
+          </table>-->
+        <table mat-table [dataSource]="localList" class="mat-elevation-z8">
+            <ng-container matColumnDef="ID">
+              <th mat-header-cell *matHeaderCellDef >ID</th>
+              <td mat-cell *matCellDef="let element">  {{element.id}} </td>
+            </ng-container>
+             
+            <ng-container matColumnDef="FullName">
+              <th mat-header-cell *matHeaderCellDef >Leader Name</th>
+              <td mat-cell *matCellDef="let element">  {{element.ledr}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Actions">
+                <th mat-header-cell *matHeaderCellDef >Actions</th>
+                <td mat-cell *matCellDef="let ldr"> 
+                    <mdb-icon (click)='Deletename(ldr.id)' fas icon="trash-alt"></mdb-icon>&nbsp;
+                    <mdb-icon fas icon="user-edit" (click)='Editleader(ldr)'></mdb-icon>
+                </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mdb-card-body>
+</mdb-card>
+<p></p>
+<mdb-card class="text-center" style="margin-left:3%; margin-right: 3%;">
+    <mdb-card-header>Maximize your registration Limits</mdb-card-header>
+    <mdb-card-body>
+      <mdb-card-title>
+        <h5>Maximize your registration counts.</h5>
+      </mdb-card-title>
+      <mdb-card-text>If you want to increase the Voter-List. Follow this link.</mdb-card-text>
+      <!--<a href="#!" class="card-link">Go Here</a>-->
+      <div class="form-row">
+        <div class="col-md">
+            <h3>Add Limit:</h3>
+            <div class="md-form">
+                <input mdbInput type="text" class="form-control" [(ngModel)]="regCounts.maxReg">
+                <label>Add limit</label>
+            </div>
+            <button mdbBtn type="button" color="unique" mdbWavesEffect (click)='onSubmit()'>Submit</button>
+        </div>
+    </div>
+    </mdb-card-body>
+</mdb-card>

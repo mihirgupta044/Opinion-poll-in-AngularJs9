@@ -1,0 +1,56 @@
+<p></p>
+<div class="fluid-container">
+    <div class="row justify-content-md-center bg">
+      <div class="col col-lg-2">
+      </div>
+      <div class="col-12 col-md-auto ">
+          <font color="white">Please enter User-Id and Password for Voting</font>
+      </div>
+      <div class="col col-lg-2">
+      </div>
+    </div><br><br>
+    <mdb-card style="margin-left:3%; margin-right: 3%;">
+      <mdb-card-header>Please Login Here</mdb-card-header>
+      <mdb-card-body>
+        <mdb-card-title>
+          <mdb-card-text>Put your Login-ID and Password.</mdb-card-text>
+        </mdb-card-title>
+        <form style="color: #757575;" [formGroup]="validationForm">
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="md-form">
+                <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+                <input mdbInput type="number" class="form-control"  formControlName="userId" [(ngModel)]="candidateId.id">
+                <label>Type your user-ID</label>
+                <mdb-error *ngIf="userId.invalid && (userId.dirty || userId.touched)">Input invalid</mdb-error>
+                <mdb-success *ngIf="userId.valid && (userId.dirty || userId.touched)">Input valid</mdb-success>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="md-form">
+                <mdb-icon fas icon="lock" class="prefix"></mdb-icon>
+                <input mdbInput type="password" class="form-control" mdbInput name='pswrd' formControlName="pswrd" [(ngModel)]="candidateId.password">
+                <label> Type your password</label>
+                <mdb-error *ngIf="pswrd.invalid && (pswrd.dirty || pswrd.touched)">Input invalid
+                </mdb-error>
+                <mdb-success *ngIf="pswrd.valid && (pswrd.dirty || pswrd.touched)">Input valid
+                </mdb-success>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+            </div>
+            <div class="col-12 col-md-auto ">
+              <button type="button" [disabled]='!validationForm.valid' mdbBtn color="light" (click)='goHere()' mdbWavesEffect>Sign-In</button>
+              <button type="button" mdbBtn color="light" (click)='Back()' mdbWavesEffect>Back</button>
+            </div>
+            <div class="col col-lg-2">
+            </div>
+          </div>
+        </form>
+      </mdb-card-body>
+    </mdb-card>
+  </div>

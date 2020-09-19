@@ -1,0 +1,48 @@
+<div class="fluid-container">
+  <div class="row">
+    <div class="col-md">	      
+      <mdb-card style="margin-left:3%; margin-right: 3%;">
+        <mdb-card-header style="font: 550 24px/32px Roboto, Helvetica Neue; color: #8f9499;">
+          <div class="row">
+            <div class="col-md">
+              <h2><strong style="color:#8f9499;">Welcome to Opinion Portal</strong></h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4><u><strong>Candidate Name: </strong></u></h4><h4>{{name1}}</h4>
+            </div>
+            <div class="col-md-6">
+              <h4><u><strong>Mobile-No: </strong></u></h4><h4>{{mob1}}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4><u><strong>Address: </strong></u></h4><h4>{{add1}}</h4>
+            </div>
+            <div class="col-md-6">
+              <h4><u><strong>City: </strong></u></h4><h4>{{city1}}</h4>
+            </div>
+          </div>
+        </mdb-card-header>
+        <mdb-card-body>
+            <div class="row">
+              <div class="col-md">
+                <blockquote class="blockquote bq-primary">
+                  <h3 class="bq-title">Please Submit Your Choice:</h3><br>
+                  <h4><strong>Pick Your favourite author:</strong> </h4>
+                    <div class="custom-control custom-radio" *ngFor="let authr of leaderNames">       
+                      <input type="radio" class="custom-control-input" id="{{authr.id}} {{authr.ledr}}" name="nameOfAuthors" [(ngModel)]="nameOfAuthors" value="{{authr.ledr}}" mdbInput>
+                      <label class="custom-control-label" for="{{authr.id}} {{authr.ledr}}">{{authr.ledr}}</label>
+                    </div>
+                </blockquote>
+                <button mdbBtn type="button" color="unique" mdbWavesEffect (click)='Submit()'>Submit</button>
+                <div class="brown-text">Selected Author name is:</div>
+                <b><i>{{nameOfAuthors}}</i></b><br>
+              </div>
+            </div>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</div>

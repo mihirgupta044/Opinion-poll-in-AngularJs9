@@ -1,0 +1,67 @@
+<form style="color: #757575;" [formGroup]="registrationForm">
+  <h1 style="background-color: #c7d4b542">Registration-Form</h1>
+  <p>Fill-Up</p>
+  Total Rgistered: {{this._countService.registrationCount}}
+  <div class="form-row">
+      <div class='col-md'>
+        <div class="md-form">
+          <input mdbInput type="text" class="form-control" formControlName="name" [(ngModel)]="candidateDetails.name">
+          <label>Name:</label>
+          <mdb-error *ngIf="name.invalid && (name.dirty || name.touched)">Input invalid</mdb-error>
+          <mdb-success *ngIf="name.valid && (name.dirty || name.touched)">Input valid</mdb-success>
+        </div>
+      </div>
+      <div class='col-md'>
+        <div class="md-form">
+          <input mdbInput type="number" class="form-control" formControlName="Mobno" [(ngModel)]="candidateDetails.mobNo">
+          <label>Mobile-No:</label>
+          <mdb-error *ngIf="Mobno.invalid && (Mobno.dirty || Mobno.touched)">Input invalid</mdb-error>
+          <mdb-success *ngIf="Mobno.valid && (Mobno.dirty || Mobno.touched)">Input valid</mdb-success>
+        </div>
+      </div>
+  </div>
+  <div class="form-row">
+    <div class='col-md'>
+      <div class="md-form">
+        <input mdbInput type="text" class="form-control"  formControlName="psw" [(ngModel)]="candidateDetails.password">
+        <label>Create Password:</label>
+        <mdb-error *ngIf="psw.invalid && (psw.dirty || psw.touched)">Input invalid</mdb-error>
+        <mdb-success *ngIf="psw.valid && (psw.dirty || psw.touched)">Input valid</mdb-success>
+      </div>
+    </div>
+    <div class='col-md'>
+      <div class="md-form">
+        <input mdbInput type="text" class="form-control" formControlName="citie" [(ngModel)]="candidateDetails.city">
+        <label>City:</label>
+        <mdb-error *ngIf="citie.invalid && (citie.dirty || citie.touched)">Input invalid</mdb-error>
+        <mdb-success *ngIf="citie.valid && (citie.dirty || citie.touched)">Input valid</mdb-success>
+      </div>    
+    </div>
+  </div>
+  <div class="form-row">
+    <div class='col-md'>    
+      <div class="md-form">
+        <input mdbInput type="text" class="form-control" formControlName="Addres" [(ngModel)]="candidateDetails.Add">
+        <label>Address:</label>
+        <mdb-error *ngIf="Addres.invalid && (Addres.dirty || Addres.touched)">Input invalid</mdb-error>
+        <mdb-success *ngIf="Addres.valid && (Addres.dirty || Addres.touched)">Input valid</mdb-success>
+      </div>     
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md">
+      <div mat-dialog-actions>
+        <button type="button" mdbBtn color="light" (click)='this.dialogRef.close()' mdbWavesEffect>Cancel</button>
+      </div>
+    </div>
+    <div class="col-md">
+      <div mat-dialog-actions>
+        <button type="button" mdbBtn color="light" (click)='submit()' [disabled]='!registrationForm.valid' mdbWavesEffect>Submit</button>
+      </div>
+    </div>
+  </div>
+  </form>
+   
+  
+
+
